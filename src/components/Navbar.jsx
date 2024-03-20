@@ -3,22 +3,14 @@ import React from "react";
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
-    <nav
-      className={
-        (props.transparent
-          ? "top-0 absolute z-50 w-full"
-          : "relative bg-white shadow-lg") +
-        " flex flex-wrap items-center justify-between px-2 py-3 "
-      }
-    >
+    <nav className={" flex flex-wrap items-center justify-between px-2 py-3 "}>
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <a
             className={
-              (props.transparent ? "text-white" : "text-gray-800") +
               " text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
             }
-            href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
+            href="#"
           >
             Tailwind Starter Kit
           </a>
@@ -27,12 +19,7 @@ export default function Navbar(props) {
             type="button"
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
-            <i
-              className={
-                (props.transparent ? "text-white" : "text-gray-800") +
-                " fas fa-bars"
-              }
-            ></i>
+            <i className={" fas fa-bars"}></i>
           </button>
         </div>
         <div
@@ -51,7 +38,7 @@ export default function Navbar(props) {
                     : "text-gray-800 hover:text-gray-600") +
                   " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                 }
-                href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/landing"
+                href="#"
               >
                 <i
                   className={
@@ -74,7 +61,7 @@ export default function Navbar(props) {
                     : "text-gray-800 hover:text-gray-600") +
                   " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                 }
-                href="#pablo"
+                href="#"
               >
                 <i
                   className={
@@ -102,8 +89,7 @@ export default function Navbar(props) {
                   className={
                     (props.transparent
                       ? "lg:text-gray-300 text-gray-500"
-                      : "text-gray-500") +
-                    " fab fa-twitter text-lg leading-lg "
+                      : "text-gray-500") + " fab fa-twitter text-lg leading-lg "
                   }
                 />
                 <span className="lg:hidden inline-block ml-2">Tweet</span>
@@ -124,8 +110,7 @@ export default function Navbar(props) {
                   className={
                     (props.transparent
                       ? "lg:text-gray-300 text-gray-500"
-                      : "text-gray-500") +
-                    " fab fa-github text-lg leading-lg "
+                      : "text-gray-500") + " fab fa-github text-lg leading-lg "
                   }
                 />
                 <span className="lg:hidden inline-block ml-2">Star</span>
@@ -134,16 +119,19 @@ export default function Navbar(props) {
 
             <li className="flex items-center">
               <button
+                onClick={() => {
+                  document.querySelector("#contact-us").scrollIntoView();
+                }}
                 className={
                   (props.transparent
                     ? "bg-white text-gray-800 active:bg-gray-100"
-                    : "bg-pink-500 text-white active:bg-pink-600") +
+                    : "bg-sky-400 text-white active:bg-sky-500") +
                   " text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
                 }
                 type="button"
                 style={{ transition: "all .15s ease" }}
               >
-                <i className="fas fa-arrow-alt-circle-down"></i> Download
+                Contact Us
               </button>
             </li>
           </ul>
